@@ -24,6 +24,31 @@ class ReservationForm extends Component{
       number: ''
     })
   }
+
+  render() {
+    const { name, date, time, number } = this.state;
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type='text' value={name} onChange={event => this.setState({name: event.target.value})}/>
+        </label>
+        <label>
+          Date:
+          <input type='text' value={date} onChange={event => this.setState({date: event.target.value})}/>
+        </label>
+        <label>
+          Time:
+          <input type='text' value={time} onChange={event => this.setState({time: event.target.value})}/>
+        </label>
+        <label>
+          Number:
+          <input type='text' value={number} onChange={event => this.setState({number: event.target.value})}/>
+        </label>
+        <button type="submit">Make Reservation</button>
+      </form>
+    )
+  }
 }
 
 export default ReservationForm;
